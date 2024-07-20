@@ -24,15 +24,14 @@ const std = @import("std");
 const Type = std.builtin.Type;
 const ArrayList = std.ArrayList;
 
+// @todo #3:45min Write dealloc mechanism for Message type.
+//  After implementation uncomment the defer section in "creates a message" test.
 /// Just a message in queue.
 pub fn Message(comptime T: type) type {
     return struct {
         data: *const T,
 
         /// Frees allocated memory for a message
-        pub fn deinit(_: Message(T)) void {
-            // @todo #3:45min Write dealloc mechanism for Message type.
-            //  After implementation uncomment the defer section in "creates a message" test.
-        }
+        pub fn deinit(_: Message(T)) void {}
     };
 }

@@ -9,7 +9,7 @@ pub fn Message(comptime T: type) type {
 
         /// Frees allocated memory for a message
         pub fn deinit(_: Message(T)) void {
-            // @todo:45min\DEV Write dealloc mechanism for Message type.
+            // @todo #1:45min\DEV Write dealloc mechanism for Message type.
             //  Current implementation, suddenly,  won't work.
             //  After implementation uncomment the defer section in
             //  "creates a message" test.

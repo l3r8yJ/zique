@@ -33,8 +33,7 @@ test "creates a message" {
     const data = Dog{ .name = "Ruby" };
     const msg = Message(Dog){ .data = &data };
 
-    // TODO: will be uncommented after puzzle will solved
-    defer Message(Dog).deinit(msg);
+    // defer Message(Dog).deinit(msg);
 
     try expectEqual("Ruby", msg.data.name);
 }

@@ -24,9 +24,8 @@ const std = @import("std");
 const Type = std.builtin.Type;
 const ArrayList = std.ArrayList;
 
-// TODO: #3:45min Write dealloc mechanism for Message type.
+// @todo #3:45min Write dealloc mechanism for Message type.
 //  After implementation uncomment the defer section in "creates a message" test.
-//  Transform it to puzzle when will be fixed
 /// Just a message in queue.
 pub fn Message(comptime T: type) type {
     return struct {

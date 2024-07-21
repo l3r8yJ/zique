@@ -20,27 +20,16 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 ---
-name: zig build
-'on':
+name: copyrights
+on:
   push:
-    branches:
-      - master
   pull_request:
-    branches:
-      - master
 jobs:
-  test:
-    strategy:
-      matrix:
-        os: [ ubuntu-latest, macos-latest, windows-latest ]
-    runs-on: ${{matrix.os}}
+  copyrights:
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
-      - uses: goto-bus-stop/setup-zig@v2
-      - run: zig build test
-  lint:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: goto-bus-stop/setup-zig@v2
-      - run: zig fmt --check .
+      - uses: yegor256/copyrights-action@0.0.5
+        with:
+          ignore: >-
+            server/resources/report.tex

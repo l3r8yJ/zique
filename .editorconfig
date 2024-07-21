@@ -1,0 +1,5 @@
+root = true
+
+[*.zon]
+indent_size = tab
+tab_width = 4
